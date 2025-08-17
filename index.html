@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite To-Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="logo">Elite<span>Todo</span></h1>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="theme-switch">
+                    <label for="theme-switch"></label>
+                </div>
+                <i class="fas fa-moon"></i>
+            </div>
+        </header>
+
+        <div class="todo-app">
+            <div class="app-header">
+                <h2>My Tasks</h2>
+                <div class="stats">
+                    <span id="total-tasks">0 tasks</span>
+                    <span id="completed-tasks">0 completed</span>
+                </div>
+            </div>
+
+            <div class="input-box">
+                <input type="text" id="task-input" placeholder="Add a new task...">
+                <button id="add-btn"><i class="fas fa-plus"></i></button>
+            </div>
+
+            <div class="controls">
+                <div class="filters">
+                    <span class="active" id="all">All</span>
+                    <span id="pending">Pending</span>
+                    <span id="completed">Completed</span>
+                </div>
+                <button id="clear-all">Clear All</button>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+                <span id="progress-text">0%</span>
+            </div>
+
+            <ul id="task-list"></ul>
+
+            <div class="features">
+                <div class="feature" id="due-date-feature">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>Due Dates</span>
+                </div>
+                <div class="feature" id="priority-feature">
+                    <i class="fas fa-flag"></i>
+                    <span>Priority</span>
+                </div>
+                <div class="feature" id="categories-feature">
+                    <i class="fas fa-tags"></i>
+                    <span>Categories</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="task-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h3>Task Details</h3>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="task-title">Task Title</label>
+                        <input type="text" id="task-title">
+                    </div>
+                    <div class="form-group">
+                        <label for="task-due-date">Due Date</label>
+                        <input type="date" id="task-due-date">
+                    </div>
+                    <div class="form-group">
+                        <label for="task-priority">Priority</label>
+                        <select id="task-priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-category">Category</label>
+                        <select id="task-category">
+                            <option value="personal">Personal</option>
+                            <option value="work" selected>Work</option>
+                            <option value="shopping">Shopping</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="task-notes">Notes</label>
+                        <textarea id="task-notes" rows="3"></textarea>
+                    </div>
+                    <button id="save-task">Save Task</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="confetti-container" id="confetti-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
